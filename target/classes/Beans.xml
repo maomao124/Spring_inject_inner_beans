@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="employee" class="t1.Employee">
+        <property name="empNo" value="5"/>
+        <property name="empName" value="小明"/>
+        <property name="dept">
+            <bean class="t1.Dept">
+                <property name="deptNo" value="4"/>
+                <property name="deptName" value="技术部"/>
+            </bean>
+        </property>
+    </bean>
+
+    <bean id="employee2" class="t2.Employee">
+        <constructor-arg index="0" value="5"/>
+        <constructor-arg index="1" value="小绿"/>
+        <constructor-arg index="2">
+            <bean class="t2.Dept">
+                <constructor-arg index="0" value="20"/>
+                <constructor-arg index="1" value="技术部"/>
+            </bean>
+        </constructor-arg>
+    </bean>
+</beans>
